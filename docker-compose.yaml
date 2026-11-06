@@ -1,0 +1,10 @@
+services:
+  php:
+    build: ./php
+    ports:
+      - "8000:8000"
+  
+  apache:
+    build: ./apache
+    ports:
+      - "8080:80"
