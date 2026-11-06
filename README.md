@@ -14,3 +14,9 @@ Ejecuta `php index.php > index.html` y haz doble clic en el archivo html generad
 
 ### Accediendo con entorno de desarrollo (ej. XAMPP)
 Mueve tu clon del repositorio dentro de htdocs e inicia el servicio Apache de XAMPP. Una vez listo, accede a la ruta en tu navegador (por ejemplo, coloqué mi clon dentro de una carpeta _dev_ y la ruta es _localhost/dev/checkphp_). Si ves _apache2handler_ en SAPI actual, esto demuestra un uso de PHP compilado como un modulo de Apache.
+
+### Accediendo con entorno contenerizado (ej. Docker)
+Ejecuta `docker compose up --build` y espera a que se terminen de construir las imagenes y ejecutar los contenedores de `php-fpm` y `httpd`. Una vez listo, accede a _localhost:8000_ en tu navegador. Deberías observar en la sección SAPI actual la etiqueta _fpm-fcgi_. Esto demuestra un uso de PHP con el servicio FastCGI Process Manager.
+
+> [!NOTE]
+> Puedes modificar el puerto definido en la sección de _apache_ dentro del archivo _docker-compose.yaml_ para abrir localhost en el puerto que necesites.
