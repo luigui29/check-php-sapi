@@ -1,9 +1,8 @@
+# PHP-FPM ligero para la demostración 
 FROM php:8.5.12-fpm-alpine
 
-COPY . /usr/src/myapp
+WORKDIR /var/www/html
 
-WORKDIR /usr/src/myapp
+COPY public-html/ /var/www/html/
 
-EXPOSE 8000
-
-CMD [ "php", "-S", "localhost:8000"]
+EXPOSE 9000
